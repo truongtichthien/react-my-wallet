@@ -1,0 +1,41 @@
+.main-panel
+  flex: 1
+  overflow: auto
+  .table-container
+    display: flex
+    .col-label
+      display: flex
+      background: #eee
+      padding: 2px 0
+      width: 100px
+      border-right: 1px #bbb solid
+      span
+        flex: 1
+        font-size: 12px
+        text-align: center
+        &:last-child
+          border-left: 1px #bbb solid
+    .cell
+      flex: 1
+      padding: 9px 0
+      border-right: 1px #aaa solid
+      border-bottom: 1px #aaa solid
+      display: flex
+      .cell-partion
+        flex: 1
+        margin: 0 3px
+        max-width: 44px
+        display: inline-block
+        text-align: center
+        font-size: 16px
+        overflow: hidden
+        &.pay
+          .input
+            text-align: center
+            width: 40px
+            font-size: 16px
+            border-top: 0
+            border-left: 0
+            border-right: 0
+            border-bottom: 1px blue dotted
+            outline: none
