@@ -7,7 +7,7 @@ const Table = (props) => (
     {props.records.map(col => (
       <div key={col.date} className="col">
         <div className="col-label">
-          <span>Pay</span><span>Owe</span>
+          <span>Paid</span><span>Owed</span>
         </div>
         {col.record.map(c => (
           <Cell key={c.person + '-' + col.date} {...c} doUpdate={(cell) => props.doUpdateCell(col, cell)} />
