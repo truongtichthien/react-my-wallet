@@ -3,7 +3,7 @@ import { names } from '../constants/Constants';
 import '../styles/FixedPanel.css';
 
 const People = () => names.map(n => {
-  return (<div className="people" key={n}>{n}</div>)
+  return <div className="people" key={n}>{n}</div>;
 });
 
 const FixedPanel = () => (

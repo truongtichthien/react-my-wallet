@@ -1,10 +1,9 @@
 const records = (cells = [], action) => {
-  // console.log('action ', action)
   switch (action.type) {
     case 'ADD_PAYMENT':
       let record = action.people.map((name) => ({
         person: name,
-        pay: '',
+        pay: 0,
         owe: 0
       }));
 
@@ -39,6 +38,7 @@ const records = (cells = [], action) => {
 
     case 'REMOVE_COL':
       return [...cells].filter((r) => r.date !== action.date);
+
     default:
       return cells;
   }
