@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import records from './cells'
+import debts from './debt/reducer'
 
 export default combineReducers({
-  records
+  debts
 })

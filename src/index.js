@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import rootReducer from './reducers'
-import Wallet from './components/Wallet';
+import rootReducer from './store/index'
+import Wallet from './module/debt/components/Wallet';
 import * as serviceWorker from './serviceWorker';
 
 const store = createStore(rootReducer)

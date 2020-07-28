@@ -1,14 +1,16 @@
+import { actions } from '../../constants/Constants'
+
 const addPayment = (people) => ({
-  type: 'ADD_PAYMENT',
+  type: actions.addDebt,
   people
 });
 
 const resetPayment = () => ({
-  type: 'RESET_PAYMENT'
+  type: actions.resetDebt
 });
 
 const updateCell = (col, cell) => ({
-  type: 'UPDATE_CELL',
+  type: actions.updateDebt,
   date: col.date,
   person: cell.person,
   pay: cell.pay,
@@ -16,7 +18,7 @@ const updateCell = (col, cell) => ({
 });
 
 const removeCol = (col) => ({
-  type: 'REMOVE_COL',
+  type: actions.removeDebt,
   date: col.date
 });
 
