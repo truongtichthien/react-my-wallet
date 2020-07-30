@@ -35,18 +35,20 @@ const handleUpdateDebt = (records = [], action) => {
     }
     return record;
   });
-}
+};
 
 const hanldeRemoveDebt = (records = [], action) => {
   return [...records].filter((rc) => rc.date !== action.date);
-}
+};
 
 const reducerMapping = {
   [actions.addDebt]: handleAddDebt,
   [actions.resetDebt]: handleResetDebt,
   [actions.updateDebt]: handleUpdateDebt,
-  [actions.removeDebt]: hanldeRemoveDebt
-}
+  [actions.removeDebt]: hanldeRemoveDebt,
+  [actions.loadDebtsSuccess]: (records = [], action) => action.debts,
+  [actions.loadDebtsError]: (records = [], action) => action.debts
+};
 
 const reducer = (records = [], action) => {
   if (!reducerMapping[action.type]) {

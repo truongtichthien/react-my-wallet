@@ -1,4 +1,18 @@
-import { actions } from '../../constants/Constants'
+import { actions } from '../../constants/Constants';
+
+const loadDebts = () => ({
+  type: actions.loadDebts
+});
+
+const loadDebtsSuccess = (debts) => ({
+  type: actions.loadDebtsSuccess,
+  debts
+});
+
+const loadDebtsError = (debts) => ({
+  type: actions.loadDebtsError,
+  debts
+});
 
 const addPayment = (people) => ({
   type: actions.addDebt,
@@ -22,4 +36,12 @@ const removeCol = (col) => ({
   date: col.date
 });
 
-export { addPayment, resetPayment, updateCell, removeCol };
+export {
+  loadDebts,
+  loadDebtsSuccess,
+  loadDebtsError,
+  addPayment,
+  resetPayment,
+  updateCell,
+  removeCol
+};

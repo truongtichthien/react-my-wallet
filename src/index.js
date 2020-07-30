@@ -1,13 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import rootReducer from './store/index'
-import Wallet from './module/debt/components/Wallet';
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(rootReducer)
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import rootReducer from './store/index';
+import rootSaga from './store/sagas';
+
+import Wallet from './module/debt/components/Wallet';
+import './index.css';
+
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(
+  rootReducer,
+  applyMiddleware(sagaMiddleware)
+);
+sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <React.StrictMode>

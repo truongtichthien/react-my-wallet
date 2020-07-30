@@ -4,12 +4,13 @@ import '../styles/People.css';
 
 const Summary = (props) => {
   const total = [];
+  const { debtRecords } = props;
   return (
     <div className="paid-panel">
       <div className="span"><span>Must Pay</span></div>
       {
         names.map((n, idx) => {
-          const totalOwe = props.debtRecords.map((day) => day.debt[idx].owe);
+          const totalOwe = debtRecords.map((day) => day.debt[idx].owe);
           total[idx] = totalOwe.reduce((a, b) => (a + b), 0);
           return <div className="people" key={n}>{ total[idx] || 0 }</div>;
         })

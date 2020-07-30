@@ -4,7 +4,14 @@ const actions = {
   addDebt: 'ADD_DEBT',
   updateDebt: 'UPDATE_DEBT',
   removeDebt: 'REMOVE_DEBT',
-  resetDebt: 'RESET_DEBT'
+  resetDebt: 'RESET_DEBT',
+
+  loadDebts: 'LOAD_DEBTS',
+  loadDebtsSuccess: 'LOAD_DEBTS_SUCCESS',
+  loadDebtsError: 'LOAD_DEBTS_ERROR',
+
+  onLoading: 'ON_LOADING',
+  offLoading: 'OFF_LOADING',
 }
 
 export { days, names, actions }
